@@ -2788,22 +2788,26 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <part name="R6" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0"/>
 <part name="JP1" library="SparkFun" deviceset="M04" device="PTH"/>
 <part name="JP2" library="SparkFun" deviceset="M04" device="PTH"/>
-<part name="LED_STRIP" library="SparkFun" deviceset="M04" device="PTH"/>
+<part name="JP0" library="SparkFun" deviceset="M04" device="PTH" value="LED_STRIP"/>
 <part name="GND7" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$2" library="SparkFun" deviceset="5V" device=""/>
 <part name="U$3" library="SparkFun" deviceset="5V" device=""/>
-<part name="S1" library="SparkFun" deviceset="TAC_SWITCH" device="SMD"/>
+<part name="S1" library="SparkFun" deviceset="TAC_SWITCH" device="SMD" value="A"/>
 <part name="U$4" library="SparkFun" deviceset="5V" device=""/>
 <part name="R7" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
 <part name="GND8" library="SparkFun" deviceset="GND" device=""/>
-<part name="S2" library="SparkFun" deviceset="TAC_SWITCH" device="SMD"/>
+<part name="B" library="SparkFun" deviceset="TAC_SWITCH" device="SMD"/>
 <part name="U$5" library="SparkFun" deviceset="5V" device=""/>
 <part name="R8" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
 <part name="GND9" library="SparkFun" deviceset="GND" device=""/>
-<part name="S3" library="SparkFun" deviceset="TAC_SWITCH" device="SMD"/>
+<part name="C" library="SparkFun" deviceset="TAC_SWITCH" device="SMD"/>
 <part name="U$6" library="SparkFun" deviceset="5V" device=""/>
 <part name="R9" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
 <part name="GND10" library="SparkFun" deviceset="GND" device=""/>
+<part name="R10" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0 DNP"/>
+<part name="R11" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0 DNP"/>
+<part name="R12" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0"/>
+<part name="R13" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -2836,7 +2840,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <instance part="R6" gate="G$1" x="104.14" y="83.82"/>
 <instance part="JP1" gate="G$1" x="208.28" y="111.76" rot="R180"/>
 <instance part="JP2" gate="G$1" x="152.4" y="76.2" rot="R90"/>
-<instance part="LED_STRIP" gate="G$1" x="27.94" y="30.48" rot="R180"/>
+<instance part="JP0" gate="G$1" x="27.94" y="30.48" rot="R180"/>
 <instance part="GND7" gate="1" x="20.32" y="20.32"/>
 <instance part="U$2" gate="G$1" x="20.32" y="35.56"/>
 <instance part="U$3" gate="G$1" x="20.32" y="96.52"/>
@@ -2844,23 +2848,32 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <instance part="U$4" gate="G$1" x="134.62" y="38.1"/>
 <instance part="R7" gate="G$1" x="134.62" y="30.48" rot="R90"/>
 <instance part="GND8" gate="1" x="134.62" y="7.62"/>
-<instance part="S2" gate="S" x="154.94" y="17.78" rot="R90"/>
+<instance part="B" gate="S" x="154.94" y="17.78" rot="R90"/>
 <instance part="U$5" gate="G$1" x="154.94" y="38.1"/>
 <instance part="R8" gate="G$1" x="154.94" y="30.48" rot="R90"/>
 <instance part="GND9" gate="1" x="154.94" y="7.62"/>
-<instance part="S3" gate="S" x="175.26" y="17.78" rot="R90"/>
+<instance part="C" gate="S" x="175.26" y="17.78" rot="R90"/>
 <instance part="U$6" gate="G$1" x="175.26" y="38.1"/>
 <instance part="R9" gate="G$1" x="175.26" y="30.48" rot="R90"/>
 <instance part="GND10" gate="1" x="175.26" y="7.62"/>
+<instance part="R10" gate="G$1" x="66.04" y="109.22" rot="R180"/>
+<instance part="R11" gate="G$1" x="66.04" y="106.68" rot="R180"/>
+<instance part="R12" gate="G$1" x="66.04" y="116.84" rot="R180"/>
+<instance part="R13" gate="G$1" x="66.04" y="114.3" rot="R180"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="RX" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="RX"/>
-<wire x1="50.8" y1="116.84" x2="53.34" y2="116.84" width="0.1524" layer="91"/>
-<label x="53.34" y="116.84" size="1.778" layer="95" xref="yes"/>
+<label x="78.74" y="116.84" size="1.778" layer="95" xref="yes"/>
+<wire x1="71.12" y1="116.84" x2="73.66" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="116.84" x2="78.74" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="109.22" x2="73.66" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="109.22" x2="73.66" y2="116.84" width="0.1524" layer="91"/>
+<junction x="73.66" y="116.84"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="P1.7/RX"/>
@@ -2870,9 +2883,14 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 </net>
 <net name="TX" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="TX"/>
-<wire x1="50.8" y1="114.3" x2="53.34" y2="114.3" width="0.1524" layer="91"/>
-<label x="53.34" y="114.3" size="1.778" layer="95" xref="yes"/>
+<label x="78.74" y="114.3" size="1.778" layer="95" xref="yes"/>
+<wire x1="76.2" y1="114.3" x2="78.74" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="114.3" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="106.68" x2="71.12" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="71.12" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
+<junction x="76.2" y="114.3"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="P1.6/TX"/>
@@ -2978,7 +2996,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <junction x="114.3" y="25.4"/>
 </segment>
 <segment>
-<pinref part="LED_STRIP" gate="G$1" pin="4"/>
+<pinref part="JP0" gate="G$1" pin="4"/>
 <wire x1="22.86" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="20.32" y1="25.4" x2="20.32" y2="22.86" width="0.1524" layer="91"/>
@@ -2992,16 +3010,16 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <junction x="134.62" y="12.7"/>
 </segment>
 <segment>
-<pinref part="S2" gate="S" pin="2"/>
-<pinref part="S2" gate="S" pin="1"/>
+<pinref part="B" gate="S" pin="2"/>
+<pinref part="B" gate="S" pin="1"/>
 <wire x1="157.48" y1="12.7" x2="154.94" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="154.94" y1="12.7" x2="154.94" y2="10.16" width="0.1524" layer="91"/>
 <junction x="154.94" y="12.7"/>
 </segment>
 <segment>
-<pinref part="S3" gate="S" pin="2"/>
-<pinref part="S3" gate="S" pin="1"/>
+<pinref part="C" gate="S" pin="2"/>
+<pinref part="C" gate="S" pin="1"/>
 <wire x1="177.8" y1="12.7" x2="175.26" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="175.26" y1="12.7" x2="175.26" y2="10.16" width="0.1524" layer="91"/>
@@ -3011,8 +3029,10 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <net name="N$1" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="RESET"/>
-<wire x1="157.48" y1="88.9" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="157.48" y1="88.9" x2="157.48" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="78.74" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="78.74" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -3065,7 +3085,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <label x="53.34" y="86.36" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="LED_STRIP" gate="G$1" pin="3"/>
+<pinref part="JP0" gate="G$1" pin="3"/>
 <wire x1="22.86" y1="27.94" x2="20.32" y2="27.94" width="0.1524" layer="91"/>
 <label x="20.32" y="27.94" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -3077,7 +3097,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <label x="53.34" y="81.28" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="LED_STRIP" gate="G$1" pin="2"/>
+<pinref part="JP0" gate="G$1" pin="2"/>
 <wire x1="22.86" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
 <label x="20.32" y="30.48" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -3125,18 +3145,6 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <pinref part="U1" gate="G$1" pin="*D6"/>
 <wire x1="50.8" y1="99.06" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <label x="53.34" y="99.06" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PROP" class="0">
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="66.04" y1="25.4" x2="63.5" y2="25.4" width="0.1524" layer="91"/>
-<label x="63.5" y="25.4" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="*D5"/>
-<wire x1="50.8" y1="101.6" x2="53.34" y2="101.6" width="0.1524" layer="91"/>
-<label x="53.34" y="101.6" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -3231,7 +3239,7 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="20.32" y1="93.98" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LED_STRIP" gate="G$1" pin="1"/>
+<pinref part="JP0" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="33.02" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="5V"/>
 <wire x1="20.32" y1="33.02" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
@@ -3265,17 +3273,17 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <label x="142.24" y="22.86" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="D2"/>
-<wire x1="50.8" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
-<label x="53.34" y="109.22" size="1.778" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="D4"/>
+<wire x1="50.8" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
+<label x="53.34" y="104.14" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SWITCH_B" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="S2" gate="S" pin="3"/>
+<pinref part="B" gate="S" pin="3"/>
 <wire x1="154.94" y1="25.4" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="S2" gate="S" pin="4"/>
+<pinref part="B" gate="S" pin="4"/>
 <wire x1="157.48" y1="22.86" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
 <junction x="154.94" y="22.86"/>
 <junction x="157.48" y="22.86"/>
@@ -3283,17 +3291,17 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <label x="162.56" y="22.86" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="*D3"/>
-<wire x1="50.8" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
-<label x="53.34" y="106.68" size="1.778" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="D12"/>
+<wire x1="50.8" y1="83.82" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
+<label x="53.34" y="83.82" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SWITCH_C" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
-<pinref part="S3" gate="S" pin="3"/>
+<pinref part="C" gate="S" pin="3"/>
 <wire x1="175.26" y1="25.4" x2="175.26" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="S3" gate="S" pin="4"/>
+<pinref part="C" gate="S" pin="4"/>
 <wire x1="177.8" y1="22.86" x2="175.26" y2="22.86" width="0.1524" layer="91"/>
 <junction x="175.26" y="22.86"/>
 <junction x="177.8" y="22.86"/>
@@ -3301,9 +3309,49 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <label x="182.88" y="22.86" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="D4"/>
-<wire x1="50.8" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
-<label x="53.34" y="104.14" size="1.778" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="D7"/>
+<wire x1="50.8" y1="96.52" x2="53.34" y2="96.52" width="0.1524" layer="91"/>
+<label x="53.34" y="96.52" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="D2"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="109.22" x2="60.96" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="RX"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="116.84" x2="60.96" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<pinref part="U1" gate="G$1" pin="TX"/>
+<wire x1="60.96" y1="114.3" x2="50.8" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="*D3"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="106.68" x2="60.96" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED_BLUE" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="*D5"/>
+<wire x1="50.8" y1="101.6" x2="53.34" y2="101.6" width="0.1524" layer="91"/>
+<label x="53.34" y="101.6" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="66.04" y1="25.4" x2="63.5" y2="25.4" width="0.1524" layer="91"/>
+<label x="63.5" y="25.4" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
