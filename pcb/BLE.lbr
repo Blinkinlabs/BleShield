@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -57,7 +57,7 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -96,6 +96,10 @@
 <smd name="P0_5" x="14.65" y="7.74" dx="0.635" dy="1.27" layer="1" rot="R90"/>
 <smd name="P0_4" x="14.65" y="9.01" dx="0.635" dy="1.27" layer="1" rot="R90"/>
 <smd name="GND_5" x="14.65" y="10.28" dx="0.635" dy="1.27" layer="1" rot="R90"/>
+<wire x1="0" y1="11.43" x2="0" y2="16.51" width="0.127" layer="21"/>
+<wire x1="14.65" y1="16.51" x2="14.65" y2="11.43" width="0.127" layer="21"/>
+<wire x1="14.65" y1="3.81" x2="14.65" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="3.81" x2="0" y2="0" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
