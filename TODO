@@ -1,0 +1,7 @@
+For RevB:
+- Teardrops on vias/thru-hole pads
+- Fix LED pinout
+- Replace crystal with SMT version
+- Figure out why A/LED STRIP didn't make it on the silkscreen
+- Use solderblob style connectors to select software/hardware RX/TX
+- Any other problems that arise during testing.
