@@ -1,4 +1,5 @@
 For RevB:
+x- Remove R2 resistor (design error)
 - Teardrops on vias/thru-hole pads
 - Fix LED pinout
 - Replace crystal with SMT version

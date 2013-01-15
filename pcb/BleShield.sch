@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2770,7 +2770,6 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <part name="GND2" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun" deviceset="GND" device=""/>
 <part name="R1" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
-<part name="R2" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun" deviceset="CAP" device="0805" value="15pf"/>
@@ -2822,7 +2821,6 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <instance part="GND2" gate="1" x="142.24" y="63.5"/>
 <instance part="GND3" gate="1" x="101.6" y="99.06"/>
 <instance part="R1" gate="G$1" x="160.02" y="68.58" rot="R90"/>
-<instance part="R2" gate="G$1" x="111.76" y="109.22" rot="R180"/>
 <instance part="GND4" gate="1" x="187.96" y="119.38"/>
 <instance part="GND5" gate="1" x="167.64" y="63.5"/>
 <instance part="C1" gate="G$1" x="109.22" y="121.92" rot="R90"/>
@@ -2934,12 +2932,8 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="134.62" y1="127" x2="101.6" y2="127" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="127" x2="101.6" y2="121.92" width="0.1524" layer="91"/>
 <junction x="101.6" y="106.68"/>
-<pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="121.92" x2="101.6" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="116.84" x2="101.6" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="109.22" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="109.22" x2="101.6" y2="109.22" width="0.1524" layer="91"/>
-<junction x="101.6" y="109.22"/>
+<wire x1="101.6" y1="116.84" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="121.92" x2="101.6" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
@@ -3033,13 +3027,6 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <wire x1="157.48" y1="88.9" x2="157.48" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="78.74" x2="160.02" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="78.74" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="P2.0"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="134.62" y1="109.22" x2="116.84" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET" class="0">
