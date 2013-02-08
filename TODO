@@ -5,4 +5,7 @@ x- Remove R2 resistor (design error)
 - Replace crystal with SMT version
 - Figure out why A/LED STRIP didn't make it on the silkscreen
 - Use solderblob style connectors to select software/hardware RX/TX
+- Fix RX/TX directions
+- Transistor on 3.3V line?
+- Add connected indicator LED/output to Arduino.
 - Any other problems that arise during testing.
