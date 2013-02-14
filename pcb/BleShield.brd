@@ -124,8 +124,10 @@
 </layers>
 <board>
 <plain>
-<text x="6.35" y="31.115" size="1.778" layer="25" rot="R270">BG312L shield RevBpre</text>
-<text x="8.89" y="28.575" size="1.778" layer="25" rot="R270">by Matt Mets 2012</text>
+<text x="8.255" y="31.75" size="1.778" layer="25" rot="R270">Bluetooth 4.0 Shield</text>
+<text x="5.715" y="21.59" size="1.778" layer="25" rot="R270">Blinkiverse</text>
+<text x="51.435" y="5.08" size="1.016" layer="25" rot="R90">RevB</text>
+<text x="12.065" y="9.525" size="1.4224" layer="25" rot="R90">blinkiverse.com/ble</text>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -1015,10 +1017,10 @@ Please make sure your boards conform to these design rules.</description>
 <via x="40.64" y="12.7" extent="1-16" drill="0.6"/>
 <wire x1="40.64" y1="12.7" x2="40.64" y2="10.795" width="0.4064" layer="1"/>
 <contactref element="U1" pad="D7"/>
-<wire x1="13.335" y1="12.7" x2="5.715" y2="20.32" width="0.4064" layer="16"/>
-<via x="5.715" y="20.32" extent="1-16" drill="0.6"/>
-<wire x1="5.715" y1="20.32" x2="5.715" y2="24.13" width="0.4064" layer="1"/>
-<wire x1="5.715" y1="24.13" x2="4.445" y2="25.4" width="0.4064" layer="1"/>
+<wire x1="13.335" y1="12.7" x2="5.08" y2="20.32" width="0.4064" layer="16"/>
+<via x="5.08" y="20.32" extent="1-16" drill="0.6"/>
+<wire x1="5.08" y1="20.32" x2="5.08" y2="24.765" width="0.4064" layer="1"/>
+<wire x1="5.08" y1="24.765" x2="4.445" y2="25.4" width="0.4064" layer="1"/>
 <wire x1="4.445" y1="25.4" x2="2.54" y2="25.4" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$18">
