@@ -1,14 +1,19 @@
 For RevC:
-- Replace crystal with cheaper version (3225 is expensive at RMB4 in 3K quantities, maybe FC-135?)
-- Figure out ground plane recommendation
-- Fix glyphs in Ledstrip, rgbled designators
-- Ask fab house not to include serial number
-- Teardrops on vias/thru-hole pads
-- Matte black, or just black (not a light black?)
-- Add status LED
+- Replace crystal with cheaper version (3225 is expensive at RMB4, maybe 3215)
+x- Figure out ground plane recommendation
+x- Fix glyphs in Ledstrip, rgbled designators
+x- Add connection status LED
+x- Add software/hardware serial select
+x- Add headers back, to allow reprogramming
+- LED strip move away from the edge (?)
+x- double-check RGB LED (color assignments can change afterwards)
+- double-check RX/TX line assignments
 - Bottom silk?
-- LED strip move away from the edge
-- double-check RGB LED
+- Move module to edge of shield (feedback from Sam- people yank on the center of the shield to remove it)
+
+- Teardrops on vias/thru-hole pads
+- Ask fab house not to include serial number
+- Matte black, or just black (not a light black?)
 
 For RevB:
 x- Remove R2 resistor (design error)

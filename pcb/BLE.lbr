@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -76,30 +76,46 @@
 <wire x1="14.65" y1="22" x2="14.65" y2="0" width="0.127" layer="51"/>
 <wire x1="14.65" y1="0" x2="0" y2="0" width="0.127" layer="51"/>
 <smd name="GND_3" x="1.25" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="VDD_1" x="2.52" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P2_2" x="3.79" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P2_1" x="5.06" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P1_4/CT" x="6.33" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P1_5/RT" x="7.6" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="RESET" x="8.87" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P1_6/TX" x="10.14" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="VDD_2" x="11.41" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="P1_7/RX" x="12.68" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="GND_4" x="13.95" y="0" dx="0.635" dy="1.27" layer="1"/>
-<smd name="GND_2" x="0" y="5.2" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="P2_0" x="0" y="6.47" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="X_OSC2" x="0" y="7.74" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="X_OSC1" x="0" y="9.01" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="GND_1" x="0" y="10.28" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="P0_7" x="14.65" y="5.2" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="P0_6" x="14.65" y="6.47" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="P0_5" x="14.65" y="7.74" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="P0_4" x="14.65" y="9.01" dx="0.635" dy="1.27" layer="1" rot="R90"/>
-<smd name="GND_5" x="14.65" y="10.28" dx="0.635" dy="1.27" layer="1" rot="R90"/>
+<smd name="VDD_1" x="2.52" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P2_2" x="3.79" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P2_1" x="5.06" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P1_4/CT" x="6.33" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P1_5/RT" x="7.6" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="RESET" x="8.87" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P1_6/TX" x="10.14" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="VDD_2" x="11.41" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="P1_7/RX" x="12.68" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="GND_4" x="13.95" y="0" dx="0.635" dy="1.27" layer="1" roundness="100"/>
+<smd name="GND_2" x="0" y="5.2" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="P2_0" x="0" y="6.47" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="X_OSC2" x="0" y="7.74" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="X_OSC1" x="0" y="9.01" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="GND_1" x="0" y="10.28" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="P0_7" x="14.65" y="5.2" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="P0_6" x="14.65" y="6.47" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="P0_5" x="14.65" y="7.74" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="P0_4" x="14.65" y="9.01" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
+<smd name="GND_5" x="14.65" y="10.28" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
 <wire x1="0" y1="11.43" x2="0" y2="16.51" width="0.127" layer="21"/>
 <wire x1="14.65" y1="16.51" x2="14.65" y2="11.43" width="0.127" layer="21"/>
 <wire x1="14.65" y1="3.81" x2="14.65" y2="0" width="0.127" layer="21"/>
 <wire x1="0" y1="3.81" x2="0" y2="0" width="0.127" layer="21"/>
+<polygon width="0.127" layer="41">
+<vertex x="0" y="0"/>
+<vertex x="14.65" y="0"/>
+<vertex x="14.65" y="12"/>
+<vertex x="0" y="12"/>
+</polygon>
+<polygon width="0.127" layer="42">
+<vertex x="0" y="0"/>
+<vertex x="14.65" y="0"/>
+<vertex x="14.65" y="12"/>
+<vertex x="0" y="12"/>
+</polygon>
+<wire x1="-4" y1="12" x2="18.65" y2="12" width="0.127" layer="20"/>
+<wire x1="18.65" y1="12" x2="18.65" y2="22" width="0.127" layer="20"/>
+<wire x1="18.65" y1="22" x2="-4" y2="22" width="0.127" layer="20"/>
+<wire x1="-4" y1="22" x2="-4" y2="12" width="0.127" layer="20"/>
 </package>
 </packages>
 <symbols>
