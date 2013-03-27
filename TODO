@@ -4,6 +4,11 @@ For RevC:
 - Fix glyphs in Ledstrip, rgbled designators
 - Ask fab house not to include serial number
 - Teardrops on vias/thru-hole pads
+- Matte black, or just black (not a light black?)
+- Add status LED
+- Bottom silk?
+- LED strip move away from the edge
+- double-check RGB LED
 
 For RevB:
 x- Remove R2 resistor (design error)
