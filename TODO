@@ -5,12 +5,14 @@ x- Fix glyphs in Ledstrip, rgbled designators
 x- Add connection status LED
 x- Add software/hardware serial select
 x- Add headers back, to allow reprogramming
-- LED strip move away from the edge (?)
+x- LED strip move away from the edge (?)
 x- double-check RGB LED (color assignments can change afterwards)
 - double-check RX/TX line assignments
+x- Switch to higher quality button
 - Bottom silk?
-- Move module to edge of shield (feedback from Sam- people yank on the center of the shield to remove it)
-
+x- Move module to edge of shield (feedback from Sam- people yank on the center of the shield to remove it) (can't)
+x- Make C3 footprint larger (6032)
+x- Align to metric grid (.5mm)
 - Teardrops on vias/thru-hole pads
 - Ask fab house not to include serial number
 - Matte black, or just black (not a light black?)
@@ -22,9 +24,3 @@ x- Replace crystal with SMT version
 x- Figure out why A/LED STRIP didn't make it on the silkscreen
 x- Drop RX/TX selectors
 x- Teardrops on vias/thru-hole pads
-
-Unknown status
-- Fix RX/TX directions
-- Any other problems that arise during testing.
-- Add connected indicator LED/output to Arduino.
-- Transistor on 3.3V line?
