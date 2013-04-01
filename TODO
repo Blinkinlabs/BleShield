@@ -1,5 +1,8 @@
+For the future:
+- Drop some functions, we're using all of the digital lines?
+
 For RevC:
-- Replace crystal with cheaper version (3225 is expensive at RMB4, maybe 3215)
+x- Replace crystal with cheaper version (3225 is expensive at RMB4, maybe 3215)
 x- Figure out ground plane recommendation
 x- Fix glyphs in Ledstrip, rgbled designators
 x- Add connection status LED
@@ -7,9 +10,9 @@ x- Add software/hardware serial select
 x- Add headers back, to allow reprogramming
 x- LED strip move away from the edge (?)
 x- double-check RGB LED (color assignments can change afterwards)
-- double-check RX/TX line assignments
+x- double-check RX/TX line assignments
 x- Switch to higher quality button
-- Bottom silk?
+x- Bottom silk? (got none!)
 x- Move module to edge of shield (feedback from Sam- people yank on the center of the shield to remove it) (can't)
 x- Make C3 footprint larger (6032)
 x- Align to metric grid (.5mm)

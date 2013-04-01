@@ -95,10 +95,13 @@ void loop() {
 char sendDATA(char *str){
   int exOR_result = 0xFD;
   int str_length = 0;
-  for(int i=0; i<6; i++)
+  
+  for(int i=0; i<6; i++) {
     ble_ACK[i] = 0;
+  }
     
   for(str_length=0; str[str_length]!=0; str_length++);
+  
   if(str_length <= 20){
     mySerial.write(0xFF);
     mySerial.write(0xFF);
