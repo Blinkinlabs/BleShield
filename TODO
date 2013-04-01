@@ -16,7 +16,7 @@ x- Bottom silk? (got none!)
 x- Move module to edge of shield (feedback from Sam- people yank on the center of the shield to remove it) (can't)
 x- Make C3 footprint larger (6032)
 x- Align to metric grid (.5mm)
-- Teardrops on vias/thru-hole pads
+x- Teardrops on vias/thru-hole pads
 - Ask fab house not to include serial number
 - Matte black, or just black (not a light black?)
 
