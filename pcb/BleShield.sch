@@ -2492,17 +2492,17 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <smd name="P0_5" x="14.65" y="7.74" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
 <smd name="P0_4" x="14.65" y="9.01" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
 <smd name="GND_5" x="14.65" y="10.28" dx="0.635" dy="1.27" layer="1" roundness="100" rot="R90"/>
-<wire x1="0" y1="11.43" x2="0" y2="16.51" width="0.127" layer="21"/>
-<wire x1="14.65" y1="16.51" x2="14.65" y2="11.43" width="0.127" layer="21"/>
+<wire x1="0" y1="11.43" x2="0" y2="21.59" width="0.127" layer="21"/>
+<wire x1="14.65" y1="21.59" x2="14.65" y2="11.43" width="0.127" layer="21"/>
 <wire x1="14.65" y1="3.81" x2="14.65" y2="0" width="0.127" layer="21"/>
 <wire x1="0" y1="3.81" x2="0" y2="0" width="0.127" layer="21"/>
-<polygon width="0.127" layer="41">
+<polygon width="0.127" layer="40">
 <vertex x="0" y="0"/>
 <vertex x="14.65" y="0"/>
 <vertex x="14.65" y="12"/>
 <vertex x="0" y="12"/>
 </polygon>
-<polygon width="0.127" layer="42">
+<polygon width="0.127" layer="39">
 <vertex x="0" y="0"/>
 <vertex x="14.65" y="0"/>
 <vertex x="14.65" y="12"/>

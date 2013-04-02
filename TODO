@@ -1,5 +1,7 @@
-For the future:
-- Drop some functions, we're using all of the digital lines?
+For RevD:
+x- Add ground plane on top&bottom under module
+- Make sure vias are covered with soldermask
+- Ask fab house not to include serial number
 
 For RevC:
 x- Replace crystal with cheaper version (3225 is expensive at RMB4, maybe 3215)
@@ -17,8 +19,6 @@ x- Move module to edge of shield (feedback from Sam- people yank on the center o
 x- Make C3 footprint larger (6032)
 x- Align to metric grid (.5mm)
 x- Teardrops on vias/thru-hole pads
-- Ask fab house not to include serial number
-- Matte black, or just black (not a light black?)
 
 For RevB:
 x- Remove R2 resistor (design error)
