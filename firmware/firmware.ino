@@ -1,95 +1,29 @@
 #include <SoftwareSerial.h>
 
-#define LED_COUNT 32
-
-#define LED_MOSI_PIN PORTB5
-#define LED_SCK_PIN PORTB3
-
 char ble_ACK[6];
 char sendDATA(char *str);
 
-SoftwareSerial mySerial(3, 2); // RX, TX
+#define SOFTWARE_RX_PIN 2
+#define SOFTWARE_TX_PIN 3
 
-#define LED_GREEN 9
-#define LED_RED 6
-#define LED_BLUE 5
 
-// For BLE Shield - Clock is PB3, MOSI is PB5
-//void send_single_byte(uint8_t c)
-//{
-//  for(uint8_t i = 0; i < 8; i++) {
-//    PORTB = (((c >> (7 - i)) & 0x01) << LED_MOSI_PIN);
-//    PORTB = (((c >> (7 - i)) & 0x01) << LED_MOSI_PIN) | _BV(LED_SCK_PIN);
-//  }
-//} 
+#define LED_RED   6
+#define LED_BLUE  9
+#define LED_GREEN 5
 
-void send_single_byte(uint8_t c)
-{
-  for(uint8_t i = 0; i < 8; i++) {
-    // For BLE Shield - Clock is PB3, MOSI is PB5
-    if(c >> (7 - i) & 0x01) {
-      bitSet(PORTB, LED_MOSI_PIN);
-    }
-    else {
-      bitClear(PORTB, LED_MOSI_PIN);      
-    }
-    
-    bitSet(PORTB, LED_SCK_PIN);
-    bitClear(PORTB, LED_SCK_PIN);
-  }
-}
+#define RESET_PIN     7
+#define CONNECTED_PIN 4
 
-void send_pixel(uint8_t red, uint8_t green, uint8_t blue) {
-  send_single_byte(0x80 | red);
-  send_single_byte(0x80 | green);
-  send_single_byte(0x80 | blue);
-}
+#define SWITCH_A 10
+#define SWITCH_B 8
 
-void setup() { 
- //Initialize serial and wait for port to open:
-  mySerial.begin(9600);
-  Serial.begin(9600);
-  
-  bitSet(DDRB, DDB3);
-  bitSet(DDRB, DDB5);
-    
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for Leonardo only
-  }
-} 
 
-int j = 0;
-int f = 0;
-int k = 0;
+SoftwareSerial mySerial(SOFTWARE_RX_PIN, SOFTWARE_TX_PIN);
 
-void color_loop() {
-  float brightness = random(100,100)/100.0;
-  
-  for (uint8_t i = 0; i < LED_COUNT; i++) {
-    uint8_t red =   64*(1+sin(i/2.0 + j/4.0       ))*brightness;
-    uint8_t green = 64*(1+sin(i/1.0 + f/9.0  + 2.1))*brightness;
-    uint8_t blue =  64*(1+sin(i/3.0 + k/14.0 + 4.2))*brightness;
-    
-    send_pixel(red, green, blue);
-  }
-  
-  j = j + random(1,2);
-  f = f + random(1,2);
-  k = k + random(1,2);
-}
-
-void loop() { 
-//  sendDATA("TEST");
-//  delay(1000);
-//  sendDATA("TEST2");
-//  delay(1000);
-//  
-//  /*for(int i=0; i<6; i++)
-//    Serial.print(ble_ACK[i]);
-//  delay(4000);*/
-
-   color_loop();
-   send_single_byte(0x00);
+void setLED(uint8_t R, uint8_t G, uint8_t B) {
+  analogWrite(LED_RED,    R);
+  analogWrite(LED_GREEN,  G);
+  analogWrite(LED_BLUE,   B);
 }
 
 char sendDATA(char *str){
@@ -99,7 +33,8 @@ char sendDATA(char *str){
   for(int i=0; i<6; i++) {
     ble_ACK[i] = 0;
   }
-    
+
+  // Assuming a null-terminated string, count it's length    
   for(str_length=0; str[str_length]!=0; str_length++);
   
   if(str_length <= 20){
@@ -119,4 +54,48 @@ char sendDATA(char *str){
     mySerial.setTimeout(100);
     mySerial.readBytes(ble_ACK, 6);
   }
+}
+
+void setup() { 
+ //Initialize serial and wait for port to open:
+  mySerial.begin(9600);
+
+//  Serial.begin(9600);
+
+  // Set the switch pins to inputs
+  pinMode(CONNECTED_PIN, INPUT);  
+  pinMode(SWITCH_A, INPUT);
+  pinMode(SWITCH_B, INPUT);
+
+  // Disable the RGB led
+  setLED(20,0,0);
+  
+  // Pull the BLE module out of reset
+  pinMode(RESET_PIN, INPUT);
+    
+//  while (!Serial) {
+//    ; // wait for serial port to connect. Needed for Leonardo only
+//  }
+}
+
+void loop() {
+  uint count = 0;
+  char message[20];
+    
+  // While we are connected, send a test sequence
+  while(digitalRead(CONNECTED_PIN)) {
+    setLED(0,0,20);  // Blue: connected
+
+    snprintf(message, 20, "Connected %is", count);
+    sendDATA(message);
+    count++;
+    
+    delay(1000);
+  
+//    // Why do this?
+//    for(int i=0; i<6; i++) {
+//      Serial.print(ble_ACK[i]);
+//    }
+  }
+  setLED(20,0,0);   // Red: disconnected
 }

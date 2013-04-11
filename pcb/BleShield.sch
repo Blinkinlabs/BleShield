@@ -12187,8 +12187,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="GND11" library="SparkFun" deviceset="GND" device=""/>
 <part name="R10" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="DNP"/>
 <part name="R11" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="DNP"/>
-<part name="R12" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="DNP"/>
-<part name="R13" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="DNP"/>
+<part name="R12" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="47k"/>
+<part name="R13" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="47k"/>
 <part name="JP1" library="SparkFun" deviceset="M05" device="1.27MM"/>
 <part name="JP2" library="SparkFun" deviceset="M04" device="1.27MM"/>
 <part name="JP4" library="SparkFun" deviceset="M05" device="1.27MM"/>
@@ -12262,12 +12262,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <wire x1="63.5" y1="109.22" x2="66.04" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="109.22" x2="66.04" y2="116.84" width="0.1524" layer="91"/>
 <junction x="66.04" y="116.84"/>
-<pinref part="U1" gate="G$1" pin="D2"/>
-<pinref part="R12" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="109.22" x2="63.5" y2="109.22" width="0.1524" layer="91"/>
-<junction x="53.34" y="109.22"/>
-<junction x="63.5" y="109.22"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="P1.6/TX"/>
@@ -12289,12 +12283,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <wire x1="63.5" y1="106.68" x2="68.58" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="106.68" x2="68.58" y2="114.3" width="0.1524" layer="91"/>
 <junction x="68.58" y="114.3"/>
-<pinref part="U1" gate="G$1" pin="*D3"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
-<junction x="53.34" y="106.68"/>
-<junction x="63.5" y="106.68"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="P1.7/RX"/>
@@ -12747,6 +12735,20 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <junction x="200.66" y="106.68"/>
 <pinref part="JP1" gate="G$1" pin="5"/>
 <label x="200.66" y="101.6" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="D2"/>
+<wire x1="50.8" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="*D3"/>
+<wire x1="50.8" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
