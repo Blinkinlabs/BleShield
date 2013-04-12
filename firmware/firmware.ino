@@ -1,8 +1,16 @@
 #include <SoftwareSerial.h>
 
+#define expectedACKLength 5
+uint8_t expectedACK[expectedACKLength] = {0x02, 0x80, 0x01, 0x00, 0x81};
+
 #define BLE_ACK_LENGTH 6
 char bleACK[BLE_ACK_LENGTH];
-char sendDATA(char *str);
+
+int transmitCount;
+int receiveErrorCount;
+
+#define MAXIMUM_RECEIVE_ERRORS_FOR_FAIL 2
+#define MINIMUM_TRANSMISSIONS_FOR_PASS 3
 
 #define SOFTWARE_RX_PIN 2
 #define SOFTWARE_TX_PIN 3
@@ -27,68 +35,66 @@ void setLED(uint8_t R, uint8_t G, uint8_t B) {
   analogWrite(LED_BLUE,   B);
 }
 
-char sendDATA(char *str){
+void sendDATA(char *str){
+  if(transmitCount >= MINIMUM_TRANSMISSIONS_FOR_PASS) {
+    setLED(0,255,0);  // All good!
+  }
+  
   int exOR_result = 0xFD;
-  int str_length = 0;
+  int dataLength = 0;
   
-  for(int i=0; i<BLE_ACK_LENGTH; i++) {
-    bleACK[i] = 0;
-  }
 
-  // Assuming a null-terminated string, count it's length    
-  for(str_length=0; str[str_length]!=0; str_length++);
+  // Calculate the length of the message
+  for(dataLength=0; str[dataLength]!=0; dataLength++);
   
-  int bytes;
+  // We can handle a maximum of 20 bytes, so bail if it's too long
+  if(dataLength > 20) {
+    return;
+  }
   
-  if(str_length <= 20){
-    mySerial.write(0xFF);
-    mySerial.write(0xFF);
-    mySerial.write(0xFF);  
-    mySerial.write(0x02);
-    mySerial.write(0x20);
-    mySerial.write(0xDD);
-    mySerial.write(str_length);
-    exOR_result = exOR_result ^ str_length;
-    for(int counter=0; counter< str_length; counter++){
-      mySerial.write(str[counter]);
-      exOR_result = exOR_result ^ str[counter];
+  // Flush the software serial buffer, in case there was stuff in it
+  mySerial.flush();
+  
+  mySerial.write(0xFF);
+  mySerial.write(0xFF);
+  mySerial.write(0xFF);  
+  mySerial.write(0x02);
+  mySerial.write(0x20);
+  mySerial.write(0xDD);
+  mySerial.write(dataLength);
+  exOR_result = exOR_result ^ dataLength;
+  for(int counter=0; counter< dataLength; counter++){
+    mySerial.write(str[counter]);
+    exOR_result = exOR_result ^ str[counter];
+  }
+  mySerial.write(exOR_result);
+
+  int receivedBytes = mySerial.readBytes(bleACK, 6); // Ack is 5, Nack is 6
+  
+  if(receivedBytes != 5) {
+    receiveErrorCount++;
+  }
+  else {
+    for (uint8_t i = 0; i < expectedACKLength; i++) {
+      if ((uint8_t)bleACK[i] != expectedACK[i]) {
+        receiveErrorCount++;
+      }
     }
-    mySerial.write(exOR_result);
-    
-//    // Read some bytes. I mean, read them!
-//    for(uint8_t i = 0; i < 5; i++) {
-//      int c = mySerial.read();
-//      if(c != -1) {
-//        ble_ACK[i] = c;
-//      }
-//    }
-
-    mySerial.setTimeout(1000);
-    bytes = mySerial.readBytes(bleACK, 6); // Ack is 5, Nack is 6
   }
   
+  while(receiveErrorCount >= MAXIMUM_RECEIVE_ERRORS_FOR_FAIL) {
+    setLED(255,0,0);
+    delay(500);    
+    setLED(0,0,0);
+    delay(500);
+  }
+
+  char buff[30];
+  snprintf(buff, 30, "%i, %x,%x,%x,%x,%x\n", receivedBytes,
+                 bleACK[0],bleACK[1],bleACK[2],bleACK[3],bleACK[4]);
+  Serial.print(buff);
   
-  // Check the ble ACK
-//  #define expectedACKLength 5
-//  uint8_t expectedACK[expectedACKLength] = {0x02, 0x80, 0x01, 0x00, 0x81};
-//  for (uint8_t i = 0; i < expectedACKLength; i++) {
-//    Serial.write(expectedACK[i]);
-//    if ((uint8_t)bleACK[i] != expectedACK[i]) {
-//      setLED(255,255,0);
-//      delay(500);
-//      setLED(0,0,0);
-//      delay(500);
-//      setLED(255,255,0);
-//      delay(500);
-//      setLED(0,0,0);
-//      delay(500);
-//      
-//      char buff[30];
-//      snprintf(buff, 30, "%i, %x,%x,%x,%x,%x\n", bytes,
-//                     bleACK[0],bleACK[1],bleACK[2],bleACK[3],bleACK[4]);
-//      Serial.write(buff);
-//    }
-//  }
+  transmitCount++;
 }
 
 void setup() { 
@@ -97,6 +103,8 @@ void setup() {
   pinMode(SOFTWARE_TX_PIN, OUTPUT);
   mySerial.begin(9600);
   mySerial.listen();
+  mySerial.setTimeout(1000);
+  receiveErrorCount = 0;
 
   Serial.begin(9600);
 
@@ -108,8 +116,14 @@ void setup() {
   // Disable the RGB led
   setLED(20,0,0);
   
-  // Pull the BLE module out of reset
-  pinMode(RESET_PIN, INPUT);
+  // Enable the reset output
+  digitalWrite(RESET_PIN, HIGH);
+  pinMode(RESET_PIN, OUTPUT);
+
+  // Reset the BLE module  
+  digitalWrite(RESET_PIN, LOW);
+  delay(100);
+  digitalWrite(RESET_PIN, HIGH);  
 
 //  while (!Serial) {
 //    ; // wait for serial port to connect. Needed for Leonardo only
