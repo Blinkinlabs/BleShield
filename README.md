@@ -17,7 +17,7 @@ Let us know what cool things you do with the BLE Shield!
 
 # Arduino Library and Demo Sketch
 
-From the `library` folder, copy the `Blinkiverse_BLEShield` to your Arduino `libraries` folder. Restart the Arduino IDE, then open File->Sketchbook->libraries->Blinkiverse_BLEShield->BLEShield. Upload to your Arduino and follow the instructions on our [website][ble] to connect to the shield using your Bluetooth 4.0 compatible device. Enjoy!
+From the `library` folder, copy the `Blinkiverse_BLEShield` folder to your Arduino `libraries` folder. Restart the Arduino IDE, then open File->Sketchbook->libraries->Blinkiverse_BLEShield->BLEShield. Upload to your Arduino and follow the instructions on our [website][ble] to connect to the shield using your Bluetooth 4.0 compatible device. Enjoy!
 
 [ti]: http://www.ti.com/product/cc2541
 [ti-wiki]: http://processors.wiki.ti.com/index.php/Category:BluetoothLE
