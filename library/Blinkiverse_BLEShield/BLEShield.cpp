@@ -100,6 +100,7 @@ int BLEShield::parse(uint8_t buffer[]) {
     else if (tack == 0) return TACK;
     else return GARBAGE;
   }
+  return GARBAGE;
 }
 
 void BLEShield::readBLE(uint8_t buffer[]) {
@@ -112,9 +113,8 @@ void BLEShield::readBLE(uint8_t buffer[]) {
   _delay_ms(50);
 
   // Read all the data
-  int x;
-  while (_bleSerial.available()) {
-    buffer[x++] = _bleSerial.read();
+  for(int x = 0; x < 64 && _bleSerial.available(); x++) {
+    buffer[x] = _bleSerial.read();
   }  
 }
 
