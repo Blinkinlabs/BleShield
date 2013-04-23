@@ -100,6 +100,7 @@ int BLEShield::parse(uint8_t buffer[]) {
     else if (tack == 0) return TACK;
     else return GARBAGE;
   }
+  return GARBAGE;
 }
 
 void BLEShield::readBLE(uint8_t buffer[]) {
