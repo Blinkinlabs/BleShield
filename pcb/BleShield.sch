@@ -3181,7 +3181,7 @@ Standard 2-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </deviceset>
 </devicesets>
 </library>
-<library name="blinkiverse">
+<library name="blinkinlabs">
 <description>Generated from &lt;b&gt;atmega32u4bb.sch&lt;/b&gt;&lt;p&gt;
 by exp-project-lbr.ulp</description>
 <packages>
@@ -12181,7 +12181,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="U$5" library="SparkFun" deviceset="5V" device=""/>
 <part name="R8" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="10K"/>
 <part name="GND9" library="SparkFun" deviceset="GND" device=""/>
-<part name="RGB_LED" library="blinkiverse" deviceset="LED-TRICOLOR-5050" device="&quot;"/>
+<part name="RGB_LED" library="blinkinlabs" deviceset="LED-TRICOLOR-5050" device="&quot;"/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIPLED_0805"/>
 <part name="R2" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="470"/>
 <part name="GND11" library="SparkFun" deviceset="GND" device=""/>
@@ -12196,7 +12196,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="SW1" library="adafruit" deviceset="SPST_TACT" device="-EVQQ2"/>
 <part name="SW2" library="adafruit" deviceset="SPST_TACT" device="-EVQQ2"/>
 <part name="JP3" library="BLE" deviceset="M02" device=""/>
-<part name="Q1" library="blinkiverse" deviceset="CRYSTAL" device="3215" value="32.768K, 10ppm"/>
+<part name="Q1" library="blinkinlabs" deviceset="CRYSTAL" device="3215" value="32.768K, 10ppm"/>
 </parts>
 <sheets>
 <sheet>
